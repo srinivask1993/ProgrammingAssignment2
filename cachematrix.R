@@ -37,3 +37,46 @@ cacheSolve <- function(x, ...) {
         inv
         
 }
+
+# Sample example:
+# > source("ProgrammingAssignment2/cachematrix.R")
+# > file <- makeCacheMatrix(matrix(1:4, 2, 2))
+# > file$get()
+#      [,1] [,2]
+# [1,]    1    3
+# [2,]    2    4
+# > file$getInverse()
+# NULL
+# > cacheSolve(file)
+#      [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+# > cacheSolve(file)
+# getting cached data
+#      [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+# > file$getInverse()
+#      [,1] [,2]
+# [1,]   -2  1.5
+# [2,]    1 -0.5
+# > file$set(matrix(c(2, 2, 1, 4), 2, 2))
+# > file$get()
+#      [,1] [,2]
+# [1,]    2    1
+# [2,]    2    4
+# > file$getInverse()
+# NULL
+# > cacheSolve(file)
+#            [,1]       [,2]
+# [1,]  0.6666667 -0.1666667
+# [2,] -0.3333333  0.3333333
+# > cacheSolve(file)
+# getting cached data
+#            [,1]       [,2]
+# [1,]  0.6666667 -0.1666667
+# [2,] -0.3333333  0.3333333
+# > file$getInverse()
+#            [,1]       [,2]
+# [1,]  0.6666667 -0.1666667
+# [2,] -0.3333333  0.3333333
